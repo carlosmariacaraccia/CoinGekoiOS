@@ -44,6 +44,7 @@
 		1FBD1BBB2C0696E30047FF8C /* CoinGekoiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinGekoiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBD1BBF2C0696E30047FF8C /* CoinGekoiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGekoiOSUITests.swift; sourceTree = "<group>"; };
 		1FBD1BC12C0696E30047FF8C /* CoinGekoiOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGekoiOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1FBD1BCE2C0697020047FF8C /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 			children = (
 				1FBD1BA42C0696E10047FF8C /* CoinGekoiOSApp.swift */,
 				1FBD1BA62C0696E10047FF8C /* ContentView.swift */,
+				1FBD1BCE2C0697020047FF8C /* Readme.md */,
 				1FBD1BA82C0696E20047FF8C /* Assets.xcassets */,
 				1FBD1BAA2C0696E20047FF8C /* Preview Content */,
 			);
