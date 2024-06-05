@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RemoteCryptoCurrencyRepostiory: IGetGlobalCryptoListRemoteRepository {
+class RemoteCryptoCurrencyRepostiory: IGlobalCryptoListRemoteRepository {
     private let apiDataSource: IAPIDataSource
     private let errorMapper: ICryptoCurrencyDomainErrorMapper
     private let domainMapper: ICryptocurrencyDomainMapper

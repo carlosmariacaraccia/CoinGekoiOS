@@ -11,16 +11,16 @@ enum CryptoCryptocurrencyDomainError: Error {
     case generic
 }
 
-protocol IGetGlobalCryptoListRemoteRepository {
+protocol IGlobalCryptoListRemoteRepository {
     func getGlobalCryptoList() async -> Result<[Cryptocurrency], CryptoCryptocurrencyDomainError>
 }
 
 class GetGlobalCryptoList {
     // as we only have 1 method and it will have the same name as the class
     // then we will call it execute
-    private let repo: IGetGlobalCryptoListRemoteRepository
+    private let repo: IGlobalCryptoListRemoteRepository
     
-    init(repo: IGetGlobalCryptoListRemoteRepository) {
+    init(repo: IGlobalCryptoListRemoteRepository) {
         self.repo = repo
     }
     

@@ -27,11 +27,11 @@ class APIDataSource: IAPIDataSource {
     }
     
     func getCryptoList() async -> Result<[CryptocurrencyBasicDTO], HTTPClientError> {
-        <#code#>
+        
     }
     
     func getPriceInfoForCryptos(id: [String]) async -> Result<[String : CryptoCurrencyPriceInfoDTO], HTTPClientError> {
-        <#code#>
+        
     }
     
     
