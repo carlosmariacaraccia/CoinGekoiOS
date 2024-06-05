@@ -34,3 +34,16 @@ struct CryptocurrencyBasicDTO: Codable {
         case name
     }
 }
+
+// MARK: - CryptocurrencyGlobalInfoDTO
+struct CryptocurrecyGlobalInfoDTO: Codable {
+    let data: CryptocurrecyGlobalData
+    
+    struct CryptocurrecyGlobalData: Codable {
+        let cryptocurrencies: [String: Double]
+        
+        enum CodingKeys: String, CodingKey {
+            case cryptocurrencies = "market_cap_percentage"
+        }
+    }
+}

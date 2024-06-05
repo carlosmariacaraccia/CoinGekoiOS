@@ -24,6 +24,8 @@
 		1FBD1BE52C0FB70A0047FF8C /* Result+FailureError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD1BE42C0FB70A0047FF8C /* Result+FailureError.swift */; };
 		1FBF2A8E2C102B6500A90B11 /* HTTPClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF2A8D2C102B6500A90B11 /* HTTPClientError.swift */; };
 		1FBF2A902C102D8100A90B11 /* APIDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF2A8F2C102D8100A90B11 /* APIDataSource.swift */; };
+		1FBF2A922C1086DD00A90B11 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF2A912C1086DD00A90B11 /* HTTPClient.swift */; };
+		1FBF2A962C10875000A90B11 /* RequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF2A952C10875000A90B11 /* RequestMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		1FBD1BE42C0FB70A0047FF8C /* Result+FailureError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+FailureError.swift"; sourceTree = "<group>"; };
 		1FBF2A8D2C102B6500A90B11 /* HTTPClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientError.swift; sourceTree = "<group>"; };
 		1FBF2A8F2C102D8100A90B11 /* APIDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataSource.swift; sourceTree = "<group>"; };
+		1FBF2A912C1086DD00A90B11 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		1FBF2A952C10875000A90B11 /* RequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		1FBD1BA32C0696E10047FF8C /* CoinGekoiOS */ = {
 			isa = PBXGroup;
 			children = (
+				1FBF2A932C10870C00A90B11 /* Infrastructure */,
 				1FBD1BE32C0FB7000047FF8C /* Utilities */,
 				1FBD1BD62C069D310047FF8C /* Data */,
 				1FBD1BCF2C0699150047FF8C /* Domain */,
@@ -219,6 +224,23 @@
 			children = (
 				1FBF2A8D2C102B6500A90B11 /* HTTPClientError.swift */,
 				1FBF2A8F2C102D8100A90B11 /* APIDataSource.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1FBF2A932C10870C00A90B11 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				1FBF2A942C10871800A90B11 /* Networking */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		1FBF2A942C10871800A90B11 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1FBF2A912C1086DD00A90B11 /* HTTPClient.swift */,
+				1FBF2A952C10875000A90B11 /* RequestMaker.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -355,11 +377,13 @@
 			files = (
 				1FBD1BE22C0FB6CA0047FF8C /* CryptocurrencyDomainErrorMapper.swift in Sources */,
 				1FBF2A8E2C102B6500A90B11 /* HTTPClientError.swift in Sources */,
+				1FBF2A922C1086DD00A90B11 /* HTTPClient.swift in Sources */,
 				1FBD1BE02C0FB6490047FF8C /* CryptocurrencyDomainMapper.swift in Sources */,
 				1FBD1BA72C0696E10047FF8C /* ContentView.swift in Sources */,
 				1FBD1BDE2C0FB6370047FF8C /* CryptocurrencyBuilder.swift in Sources */,
 				1FBD1BD92C069D6F0047FF8C /* RemoteCryptoCurrencyRepostiory.swift in Sources */,
 				1FBD1BE52C0FB70A0047FF8C /* Result+FailureError.swift in Sources */,
+				1FBF2A962C10875000A90B11 /* RequestMaker.swift in Sources */,
 				1FBD1BD22C0699400047FF8C /* Cryptocurrency.swift in Sources */,
 				1FBD1BDC2C073BC10047FF8C /* CryptoCurrenciesDTOs.swift in Sources */,
 				1FBD1BD52C0699DA0047FF8C /* GetGlobalCryptoList.swift in Sources */,
