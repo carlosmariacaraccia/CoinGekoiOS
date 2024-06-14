@@ -26,6 +26,7 @@
 		1FBF2A902C102D8100A90B11 /* APIDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF2A8F2C102D8100A90B11 /* APIDataSource.swift */; };
 		1FBF2A922C1086DD00A90B11 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF2A912C1086DD00A90B11 /* HTTPClient.swift */; };
 		1FBF2A962C10875000A90B11 /* RequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF2A952C10875000A90B11 /* RequestMaker.swift */; };
+		1FBF2A9A2C108DFB00A90B11 /* GlobalCryptoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF2A992C108DFB00A90B11 /* GlobalCryptoListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		1FBF2A8F2C102D8100A90B11 /* APIDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataSource.swift; sourceTree = "<group>"; };
 		1FBF2A912C1086DD00A90B11 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		1FBF2A952C10875000A90B11 /* RequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMaker.swift; sourceTree = "<group>"; };
+		1FBF2A992C108DFB00A90B11 /* GlobalCryptoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalCryptoListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		1FBD1BA32C0696E10047FF8C /* CoinGekoiOS */ = {
 			isa = PBXGroup;
 			children = (
+				1FBF2A982C108DD800A90B11 /* Presentation */,
 				1FBF2A932C10870C00A90B11 /* Infrastructure */,
 				1FBD1BE32C0FB7000047FF8C /* Utilities */,
 				1FBD1BD62C069D310047FF8C /* Data */,
@@ -243,6 +246,14 @@
 				1FBF2A952C10875000A90B11 /* RequestMaker.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		1FBF2A982C108DD800A90B11 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				1FBF2A992C108DFB00A90B11 /* GlobalCryptoListViewModel.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,6 +394,7 @@
 				1FBD1BDE2C0FB6370047FF8C /* CryptocurrencyBuilder.swift in Sources */,
 				1FBD1BD92C069D6F0047FF8C /* RemoteCryptoCurrencyRepostiory.swift in Sources */,
 				1FBD1BE52C0FB70A0047FF8C /* Result+FailureError.swift in Sources */,
+				1FBF2A9A2C108DFB00A90B11 /* GlobalCryptoListViewModel.swift in Sources */,
 				1FBF2A962C10875000A90B11 /* RequestMaker.swift in Sources */,
 				1FBD1BD22C0699400047FF8C /* Cryptocurrency.swift in Sources */,
 				1FBD1BDC2C073BC10047FF8C /* CryptoCurrenciesDTOs.swift in Sources */,
