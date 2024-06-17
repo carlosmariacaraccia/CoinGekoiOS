@@ -13,7 +13,6 @@ struct CoinGekoiOSApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
             GlobalCryptoListView(viewModel: .init(getGlobalCryptoList: root))
         }
     }
