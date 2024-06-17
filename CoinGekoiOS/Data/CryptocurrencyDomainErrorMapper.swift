@@ -8,11 +8,11 @@
 import Foundation
 
 protocol ICryptoCurrencyDomainErrorMapper {
-    func map(error: HTTPClientError?) -> CryptoCryptocurrencyDomainError
+    func map(error: HTTPClientError?) -> CryptocurrencyDomainError
 }
 
 class CryptoCurrencyDomainErrorMapper: ICryptoCurrencyDomainErrorMapper {
-    func map(error: HTTPClientError?) -> CryptoCryptocurrencyDomainError {
+    func map(error: HTTPClientError?) -> CryptocurrencyDomainError {
         guard error == .tooManyRequests else { return .generic }
         return .tooManyRequests
     }

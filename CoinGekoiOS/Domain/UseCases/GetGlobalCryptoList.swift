@@ -7,14 +7,14 @@
 
 import Foundation
 
-enum CryptoCryptocurrencyDomainError: LocalizedError {
+enum CryptocurrencyDomainError: LocalizedError {
     case generic
     case tooManyRequests
     
 }
 
 protocol IGetGlobalCryptoList {
-    func execute() async -> Result<[Cryptocurrency], CryptoCryptocurrencyDomainError>
+    func execute() async -> Result<[Cryptocurrency], CryptocurrencyDomainError>
 }
 
 class GetGlobalCryptoList: IGetGlobalCryptoList {
@@ -26,7 +26,7 @@ class GetGlobalCryptoList: IGetGlobalCryptoList {
         self.repo = repo
     }
     
-    func execute() async -> Result<[Cryptocurrency], CryptoCryptocurrencyDomainError> {
+    func execute() async -> Result<[Cryptocurrency], CryptocurrencyDomainError> {
         let result = await repo.getGlobalCryptoList()
         guard let cryptoList = try? result.get() else { 
             if case let .failure(error) = result {

@@ -30,13 +30,13 @@ class GlobalCryptoListViewModel: ObservableObject {
                 self.cryptos = try await self.getGlobalCryptoList.execute().get().map(CryptocurrencyListPresentableItem.init)
             } catch {
                 self.showErrorAlert = true
-                handleError(error: error as? CryptoCryptocurrencyDomainError)
+                handleError(error: error as? CryptocurrencyDomainError)
             }
             showLoadingSpinner = false
         }
     }
     
-    private func handleError(error: CryptoCryptocurrencyDomainError?)  {
+    private func handleError(error: CryptocurrencyDomainError?)  {
         showErrorMessage = errorMapper.map(domainError: error)
     }
 }

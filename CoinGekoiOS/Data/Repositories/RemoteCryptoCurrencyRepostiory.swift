@@ -8,7 +8,7 @@
 import Foundation
 
 protocol IRemoteCryptoCurrencyRepostiory {
-    func getGlobalCryptoList() async -> Result<[Cryptocurrency], CryptoCryptocurrencyDomainError>
+    func getGlobalCryptoList() async -> Result<[Cryptocurrency], CryptocurrencyDomainError>
 }
 
 class RemoteCryptoCurrencyRepostiory: IRemoteCryptoCurrencyRepostiory {
@@ -26,7 +26,7 @@ class RemoteCryptoCurrencyRepostiory: IRemoteCryptoCurrencyRepostiory {
         self.domainMapper = domainMapper
     }
     
-    func getGlobalCryptoList() async -> Result<[Cryptocurrency], CryptoCryptocurrencyDomainError> {
+    func getGlobalCryptoList() async -> Result<[Cryptocurrency], CryptocurrencyDomainError> {
         let symbolListResult = await apiDataSource.getGlobalCryptoList()
         let cryptoListResult = await apiDataSource.getCryptoList()
         

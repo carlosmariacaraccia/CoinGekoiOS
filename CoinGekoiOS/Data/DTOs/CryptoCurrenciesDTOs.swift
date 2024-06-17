@@ -47,3 +47,13 @@ struct CryptocurrecyGlobalInfoDTO: Codable {
         }
     }
 }
+
+// MARK: - CryptocurrencyPriceHistoryDTO
+struct CryptocurrencyPriceHistoryDTO: Codable {
+    let prices: [[Double]]
+    
+    enum CodingKeys: String, CodingKey {
+        case prices = "prices"
+    }
+}
+

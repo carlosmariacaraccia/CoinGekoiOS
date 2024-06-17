@@ -8,7 +8,7 @@
 import Foundation
 
 class CryptocurrencyPresentableErrorMapper {
-    func map(domainError: CryptoCryptocurrencyDomainError?) -> String {
+    func map(domainError: CryptocurrencyDomainError?) -> String {
         guard let error = domainError else { return "Something went wrong" }
         switch error {
         case .generic:

@@ -12,6 +12,10 @@
 		1F4CDD5A2C20835B00131042 /* CryptoListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CDD592C20835B00131042 /* CryptoListItemView.swift */; };
 		1F4CDD5E2C20A9C100131042 /* CryptoListPresentableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CDD5D2C20A9C100131042 /* CryptoListPresentableItem.swift */; };
 		1F4CDD602C20AA1900131042 /* CryptocurrencyPresentableErrorMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CDD5F2C20AA1900131042 /* CryptocurrencyPresentableErrorMapper.swift */; };
+		1F4CDD622C20B1AC00131042 /* CrytocurrencyPriceHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CDD612C20B1AC00131042 /* CrytocurrencyPriceHistory.swift */; };
+		1F4CDD642C20B4E700131042 /* GetPriceHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CDD632C20B4E700131042 /* GetPriceHistory.swift */; };
+		1F4CDD662C20B81000131042 /* CryptocurrencyPriceHistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CDD652C20B81000131042 /* CryptocurrencyPriceHistoryRepository.swift */; };
+		1F4CDD682C20BA5000131042 /* APIPriceHistoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CDD672C20BA5000131042 /* APIPriceHistoryDataSource.swift */; };
 		1FBD1BA52C0696E10047FF8C /* CoinGekoiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD1BA42C0696E10047FF8C /* CoinGekoiOSApp.swift */; };
 		1FBD1BA92C0696E20047FF8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD1BA82C0696E20047FF8C /* Assets.xcassets */; };
 		1FBD1BAC2C0696E20047FF8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD1BAB2C0696E20047FF8C /* Preview Assets.xcassets */; };
@@ -56,6 +60,10 @@
 		1F4CDD592C20835B00131042 /* CryptoListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListItemView.swift; sourceTree = "<group>"; };
 		1F4CDD5D2C20A9C100131042 /* CryptoListPresentableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListPresentableItem.swift; sourceTree = "<group>"; };
 		1F4CDD5F2C20AA1900131042 /* CryptocurrencyPresentableErrorMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptocurrencyPresentableErrorMapper.swift; sourceTree = "<group>"; };
+		1F4CDD612C20B1AC00131042 /* CrytocurrencyPriceHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrytocurrencyPriceHistory.swift; sourceTree = "<group>"; };
+		1F4CDD632C20B4E700131042 /* GetPriceHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPriceHistory.swift; sourceTree = "<group>"; };
+		1F4CDD652C20B81000131042 /* CryptocurrencyPriceHistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptocurrencyPriceHistoryRepository.swift; sourceTree = "<group>"; };
+		1F4CDD672C20BA5000131042 /* APIPriceHistoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPriceHistoryDataSource.swift; sourceTree = "<group>"; };
 		1FBD1BA12C0696E10047FF8C /* CoinGekoiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinGekoiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBD1BA42C0696E10047FF8C /* CoinGekoiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGekoiOSApp.swift; sourceTree = "<group>"; };
 		1FBD1BA82C0696E20047FF8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				1FBD1BD12C0699400047FF8C /* Cryptocurrency.swift */,
+				1F4CDD612C20B1AC00131042 /* CrytocurrencyPriceHistory.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -207,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				1FBD1BD42C0699DA0047FF8C /* GetGlobalCryptoList.swift */,
+				1F4CDD632C20B4E700131042 /* GetPriceHistory.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -228,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				1FBD1BD82C069D6F0047FF8C /* RemoteCryptoCurrencyRepostiory.swift */,
+				1F4CDD652C20B81000131042 /* CryptocurrencyPriceHistoryRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -253,6 +264,7 @@
 			children = (
 				1FBF2A8D2C102B6500A90B11 /* HTTPClientError.swift */,
 				1FBF2A8F2C102D8100A90B11 /* APIDataSource.swift */,
+				1F4CDD672C20BA5000131042 /* APIPriceHistoryDataSource.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -414,9 +426,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4CDD662C20B81000131042 /* CryptocurrencyPriceHistoryRepository.swift in Sources */,
+				1F4CDD642C20B4E700131042 /* GetPriceHistory.swift in Sources */,
 				1FBD1BE22C0FB6CA0047FF8C /* CryptocurrencyDomainErrorMapper.swift in Sources */,
 				1FBF2A8E2C102B6500A90B11 /* HTTPClientError.swift in Sources */,
 				1FBF2A922C1086DD00A90B11 /* HTTPClient.swift in Sources */,
+				1F4CDD682C20BA5000131042 /* APIPriceHistoryDataSource.swift in Sources */,
 				1FBD1BE02C0FB6490047FF8C /* CryptocurrencyDomainMapper.swift in Sources */,
 				1FBD1BDE2C0FB6370047FF8C /* CryptocurrencyBuilder.swift in Sources */,
 				1FBD1BD92C069D6F0047FF8C /* RemoteCryptoCurrencyRepostiory.swift in Sources */,
@@ -433,6 +448,7 @@
 				1F4CDD582C20567800131042 /* GlobalCryptoListView.swift in Sources */,
 				1FBF2A902C102D8100A90B11 /* APIDataSource.swift in Sources */,
 				1F4CDD5E2C20A9C100131042 /* CryptoListPresentableItem.swift in Sources */,
+				1F4CDD622C20B1AC00131042 /* CrytocurrencyPriceHistory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
