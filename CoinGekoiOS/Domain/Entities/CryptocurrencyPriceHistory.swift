@@ -1,5 +1,5 @@
 //
-//  CrytocurrencyPriceHistory.swift
+//  CryptocurrencyPriceHistory.swift
 //  CoinGekoiOS
 //
 //  Created by Carlos Caraccia on 6/17/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CrytocurrencyPriceHistory {
+struct CryptocurrencyPriceHistory {
     let prices: [DataPoint]
     
     struct DataPoint {

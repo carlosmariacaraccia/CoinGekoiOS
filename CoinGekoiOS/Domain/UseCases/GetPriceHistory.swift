@@ -10,14 +10,14 @@ import Foundation
 
 class GetPriceHistory {
     
-    let cryptocurrencyPriceHistoryRepository: ICryptocurrencyPriceHistoryRepository
+    let cryptocurrencyPriceHistoryRepository: IRemoteCryptocurrencyPriceHistoryRepository
     
-    init(cryptocurrencyPriceHistoryRepository: ICryptocurrencyPriceHistoryRepository) {
+    init(cryptocurrencyPriceHistoryRepository: IRemoteCryptocurrencyPriceHistoryRepository) {
         self.cryptocurrencyPriceHistoryRepository = cryptocurrencyPriceHistoryRepository
     }
     
     
-    func execute(id: String, days: Int) async -> Result<CrytocurrencyPriceHistory, CryptocurrencyDomainError> {
+    func execute(id: String, days: Int) async -> Result<CryptocurrencyPriceHistory, CryptocurrencyDomainError> {
        await cryptocurrencyPriceHistoryRepository.getPriceHistory(id: id, days: days)
     }
 }
