@@ -13,6 +13,7 @@ protocol ICryptoCurrencyDomainErrorMapper {
 
 class CryptoCurrencyDomainErrorMapper: ICryptoCurrencyDomainErrorMapper {
     func map(error: HTTPClientError?) -> CryptoCryptocurrencyDomainError {
-        .generic
+        guard error == .tooManyRequests else { return .generic }
+        return .tooManyRequests
     }
 }

@@ -7,8 +7,10 @@
 
 import Foundation
 
-enum CryptoCryptocurrencyDomainError: Error {
+enum CryptoCryptocurrencyDomainError: LocalizedError {
     case generic
+    case tooManyRequests
+    
 }
 
 protocol IGetGlobalCryptoList {

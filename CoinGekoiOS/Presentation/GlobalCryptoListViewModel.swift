@@ -11,50 +11,40 @@ import SwiftUI
 class GlobalCryptoListViewModel: ObservableObject {
     @Published var cryptos = [CryptocurrencyListPresentableItem]()
     @Published var showLoadingSpinner = false
+    var showErrorMessage: String?
+    @Published var showErrorAlert = false
     
     private let getGlobalCryptoList: IGetGlobalCryptoList
+    private let errorMapper: CryptocurrencyPresentableErrorMapper
     
-    init(getGlobalCryptoList: IGetGlobalCryptoList) {
+    init(getGlobalCryptoList: IGetGlobalCryptoList, errorMapper: CryptocurrencyPresentableErrorMapper) {
         self.getGlobalCryptoList = getGlobalCryptoList
+        self.errorMapper = errorMapper
     }
     
     @MainActor
     func onAppear() {
         showLoadingSpinner = true
         Task {
-            let cryptos = try? await self.getGlobalCryptoList.execute().get().map(CryptocurrencyListPresentableItem.init)
+            do {
+                self.cryptos = try await self.getGlobalCryptoList.execute().get().map(CryptocurrencyListPresentableItem.init)
+            } catch {
+                self.showErrorAlert = true
+                handleError(error: error as? CryptoCryptocurrencyDomainError)
+            }
             showLoadingSpinner = false
-            guard let cryptos = cryptos else { return }
-            self.cryptos = cryptos
         }
+    }
+    
+    private func handleError(error: CryptoCryptocurrencyDomainError?)  {
+        showErrorMessage = errorMapper.map(domainError: error)
     }
 }
 
-// Type that we'll use to display inside the view model
-struct CryptocurrencyListPresentableItem: Identifiable {
-    let id: String
-    let name: String
-    let symbol: String
-    let price: String
-    var price24h: String
-    var volume24h: String
-    let marketCap: String
-    
-    init(domainModel: Cryptocurrency) {
-        self.id = domainModel.id
-        self.name = domainModel.name
-        self.symbol = domainModel.symbol
-        self.price = String(domainModel.price) + " $"
-        self.marketCap = String(domainModel.marketCap) + " $"
-        if let price24h = domainModel.price24h,
-           let volume24h = domainModel.volume24h {
-            self.price24h = String(price24h) + " $"
-            self.volume24h = String(volume24h) + " $"
-        } else {
-            // we'll show a dash when there's not value
-            self.price24h = "-"
-            self.volume24h  = "-"
-        }
-    }
 
+// MARK: - Double extension to convert to String and return a two decimal place formatted String
+extension Double {
+    func twoDecimalPlacesFormatted() -> String {
+        self.formatted(.number.precision(.fractionLength(2)))
+    }
 }

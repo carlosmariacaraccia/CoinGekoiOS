@@ -18,12 +18,14 @@ struct GlobalCryptoListView: View {
             } else {
                 List {
                     ForEach(viewModel.cryptos) { crypto in
-                        Text(crypto.name)
+                        CryptoListItemView(item: crypto)
                     }
                 }
             }
         }
         .onAppear(perform: viewModel.onAppear)
+        .refreshable { viewModel.onAppear() }
+        .alert("Error", isPresented: $viewModel.showErrorAlert, actions: { Button("OK", action: {}) }, message: { Text(viewModel.showErrorMessage ?? "") })
     }
 }
 

@@ -16,3 +16,17 @@ struct Cryptocurrency {
     var volume24h: Double?
     let marketCap: Double
 }
+
+// MARK: - Mocked data
+extension Cryptocurrency {
+    static let mockedData: Self = .init(
+        id: "btc",
+        name: "Bitcoin",
+        symbol: "btc",
+        price: 24000.43,
+        price24h: 1.23,
+        volume24h: 3400000,
+        marketCap: 1340000
+    )
+}
+
