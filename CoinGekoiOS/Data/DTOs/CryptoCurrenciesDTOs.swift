@@ -9,10 +9,10 @@ import Foundation
 
 // MARK: - CryptoCurrencyPriceInfoDTO
 struct CryptoCurrencyPriceInfoDTO: Codable {
-    let price: Double
-    let marketCap: Double
-    let volume24h: Double
-    let price24h: Double
+    var price: Double?
+    var marketCap: Double?
+    var volume24h: Double?
+    var price24h: Double?
     
     enum CodingKeys: String, CodingKey {
         case price = "usd"

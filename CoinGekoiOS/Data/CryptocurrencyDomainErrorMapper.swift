@@ -11,8 +11,8 @@ protocol ICryptoCurrencyDomainErrorMapper {
     func map(error: HTTPClientError?) -> CryptoCryptocurrencyDomainError
 }
 
-class CryptoCurrencyDomainErrorMapper {
+class CryptoCurrencyDomainErrorMapper: ICryptoCurrencyDomainErrorMapper {
     func map(error: HTTPClientError?) -> CryptoCryptocurrencyDomainError {
-        fatalError() // TODO: Implement a correct error logic conversion in this case
+        .generic
     }
 }

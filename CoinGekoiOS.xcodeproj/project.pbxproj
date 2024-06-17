@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F4CDD552C20533300131042 /* GlobalCryptoListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CDD542C20533300131042 /* GlobalCryptoListFactory.swift */; };
+		1F4CDD582C20567800131042 /* GlobalCryptoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CDD572C20567800131042 /* GlobalCryptoListView.swift */; };
 		1FBD1BA52C0696E10047FF8C /* CoinGekoiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD1BA42C0696E10047FF8C /* CoinGekoiOSApp.swift */; };
 		1FBD1BA72C0696E10047FF8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD1BA62C0696E10047FF8C /* ContentView.swift */; };
 		1FBD1BA92C0696E20047FF8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD1BA82C0696E20047FF8C /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F4CDD542C20533300131042 /* GlobalCryptoListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalCryptoListFactory.swift; sourceTree = "<group>"; };
+		1F4CDD572C20567800131042 /* GlobalCryptoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalCryptoListView.swift; sourceTree = "<group>"; };
 		1FBD1BA12C0696E10047FF8C /* CoinGekoiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinGekoiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBD1BA42C0696E10047FF8C /* CoinGekoiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGekoiOSApp.swift; sourceTree = "<group>"; };
 		1FBD1BA62C0696E10047FF8C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +102,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F4CDD532C20531500131042 /* CompositionRoot */ = {
+			isa = PBXGroup;
+			children = (
+				1F4CDD542C20533300131042 /* GlobalCryptoListFactory.swift */,
+			);
+			path = CompositionRoot;
+			sourceTree = "<group>";
+		};
+		1F4CDD562C20565000131042 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1F4CDD572C20567800131042 /* GlobalCryptoListView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		1FBD1B982C0696E10047FF8C = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +141,8 @@
 		1FBD1BA32C0696E10047FF8C /* CoinGekoiOS */ = {
 			isa = PBXGroup;
 			children = (
+				1F4CDD562C20565000131042 /* UI */,
+				1F4CDD532C20531500131042 /* CompositionRoot */,
 				1FBF2A982C108DD800A90B11 /* Presentation */,
 				1FBF2A932C10870C00A90B11 /* Infrastructure */,
 				1FBD1BE32C0FB7000047FF8C /* Utilities */,
@@ -400,6 +422,8 @@
 				1FBD1BDC2C073BC10047FF8C /* CryptoCurrenciesDTOs.swift in Sources */,
 				1FBD1BD52C0699DA0047FF8C /* GetGlobalCryptoList.swift in Sources */,
 				1FBD1BA52C0696E10047FF8C /* CoinGekoiOSApp.swift in Sources */,
+				1F4CDD552C20533300131042 /* GlobalCryptoListFactory.swift in Sources */,
+				1F4CDD582C20567800131042 /* GlobalCryptoListView.swift in Sources */,
 				1FBF2A902C102D8100A90B11 /* APIDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

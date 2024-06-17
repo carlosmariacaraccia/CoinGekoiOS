@@ -9,17 +9,17 @@ import Foundation
 
 protocol ICryptocurrencyDomainMapper {
     func getCryptocurrencyBuilderList(symbolList: [String],cryptoList: [CryptocurrencyBasicDTO]) -> [CryptocurrencyBuilder]
-    func map(builderList: [CryptocurrencyBuilder], priceInfo: [String: CryptoCurrencyPriceInfoDTO]) -> [Cryptocurrency]
+    func map(builderList: [CryptocurrencyBuilder], priceInfo: [String: CryptoCurrencyPriceInfoDTO?]) -> [Cryptocurrency]
 }
 
 class CryptocurrencyDomainMapper: ICryptocurrencyDomainMapper {
-    func map(builderList: [CryptocurrencyBuilder], priceInfo: [String: CryptoCurrencyPriceInfoDTO]) -> [Cryptocurrency] {
+    func map(builderList: [CryptocurrencyBuilder], priceInfo: [String: CryptoCurrencyPriceInfoDTO?]) -> [Cryptocurrency] {
         builderList.forEach {
             guard let priceInfo = priceInfo[$0.id] else { return }
-            $0.price = priceInfo.price
-            $0.volume24h = priceInfo.volume24h
-            $0.marketCap = priceInfo.marketCap
-            $0.price24h = priceInfo.price24h
+            $0.price = priceInfo?.price
+            $0.volume24h = priceInfo?.volume24h
+            $0.marketCap = priceInfo?.marketCap
+            $0.price24h = priceInfo?.price24h
         }
         return builderList.compactMap { $0.build() }
     }
