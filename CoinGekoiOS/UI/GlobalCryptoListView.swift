@@ -12,9 +12,14 @@ struct GlobalCryptoListView: View {
     
     var body: some View {
         VStack {
-            List {
-                ForEach(viewModel.cryptos) { crypto in
-                    Text(crypto.name)
+            if viewModel.showLoadingSpinner {
+                ProgressView()
+                    .progressViewStyle(.circular)
+            } else {
+                List {
+                    ForEach(viewModel.cryptos) { crypto in
+                        Text(crypto.name)
+                    }
                 }
             }
         }

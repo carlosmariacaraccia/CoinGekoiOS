@@ -10,6 +10,7 @@ import SwiftUI
 
 class GlobalCryptoListViewModel: ObservableObject {
     @Published var cryptos = [CryptocurrencyListPresentableItem]()
+    @Published var showLoadingSpinner = false
     
     private let getGlobalCryptoList: IGetGlobalCryptoList
     
@@ -19,8 +20,10 @@ class GlobalCryptoListViewModel: ObservableObject {
     
     @MainActor
     func onAppear() {
+        showLoadingSpinner = true
         Task {
             let cryptos = try? await self.getGlobalCryptoList.execute().get().map(CryptocurrencyListPresentableItem.init)
+            showLoadingSpinner = false
             guard let cryptos = cryptos else { return }
             self.cryptos = cryptos
         }
