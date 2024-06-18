@@ -29,7 +29,6 @@ struct CryptocurrencyListPresentableItem: Identifiable {
             self.volume24h = String(volume24h.twoDecimalPlacesFormatted()) + " $"
             self.isPriceChangePositive = price24h > 0
             self.price24h = "\(isPriceChangePositive ? "+" : "")" + String(price24h.twoDecimalPlacesFormatted()) + " %"
- 
         } else {
             // we'll show a dash when there's not value
             self.price24h = "-"
