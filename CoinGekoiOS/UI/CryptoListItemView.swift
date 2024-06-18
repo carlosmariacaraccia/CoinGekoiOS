@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CryptoListItemView: View {
     let item: CryptocurrencyListPresentableItem
-    
+
     var body: some View {
         VStack {
             HStack {

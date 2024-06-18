@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class GetPriceHistory {
     
     let cryptocurrencyPriceHistoryRepository: IRemoteCryptocurrencyPriceHistoryRepository
@@ -16,8 +15,7 @@ class GetPriceHistory {
         self.cryptocurrencyPriceHistoryRepository = cryptocurrencyPriceHistoryRepository
     }
     
-    
     func execute(id: String, days: Int) async -> Result<CryptocurrencyPriceHistory, CryptocurrencyDomainError> {
-       await cryptocurrencyPriceHistoryRepository.getPriceHistory(id: id, days: days)
+        await cryptocurrencyPriceHistoryRepository.getPriceHistory(id: id, days: days)
     }
 }

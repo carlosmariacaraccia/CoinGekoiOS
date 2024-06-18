@@ -29,4 +29,3 @@ extension Cryptocurrency {
         marketCap: 1340000
     )
 }
-

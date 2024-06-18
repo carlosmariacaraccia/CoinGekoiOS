@@ -1,0 +1,8 @@
+disabled_rules:
+- trailing_whitespace
+- nesting
+- line_length
+
+opt_in_rules:
+- indentation_width
+- explicit_self

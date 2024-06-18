@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GlobalCryptoListView: View {
     @StateObject var viewModel: GlobalCryptoListViewModel
-    
+
     var body: some View {
         VStack {
             if viewModel.showLoadingSpinner {
@@ -25,11 +25,14 @@ struct GlobalCryptoListView: View {
         }
         .onAppear(perform: viewModel.onAppear)
         .refreshable { viewModel.onAppear() }
-        .alert("Error", isPresented: $viewModel.showErrorAlert, actions: { Button("OK", action: {}) }, message: { Text(viewModel.showErrorMessage ?? "") })
+        .alert("Error", isPresented: $viewModel.showErrorAlert, actions: errorActions, message: errorMessage)
+    }
+
+    private func errorActions() -> some View {
+        Button("OK", action: {})
+    }
+
+    private func errorMessage() -> some View {
+        Text(viewModel.showErrorMessage ?? "No message was added")
     }
 }
-
-//#Preview {
-//    GlobalCryptoListView()
-//}
-

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ICryptocurrencyDomainMapper {
-    func getCryptocurrencyBuilderList(symbolList: [String],cryptoList: [CryptocurrencyBasicDTO]) -> [CryptocurrencyBuilder]
+    func getCryptocurrencyBuilderList(symbolList: [String], cryptoList: [CryptocurrencyBasicDTO]) -> [CryptocurrencyBuilder]
     func map(builderList: [CryptocurrencyBuilder], priceInfo: [String: CryptoCurrencyPriceInfoDTO?]) -> [Cryptocurrency]
 }
 

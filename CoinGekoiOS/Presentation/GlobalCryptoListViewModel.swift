@@ -27,7 +27,7 @@ class GlobalCryptoListViewModel: ObservableObject {
         showLoadingSpinner = true
         Task {
             do {
-                self.cryptos = try await self.getGlobalCryptoList.execute().get().map(CryptocurrencyListPresentableItem.init)
+                self.cryptos = try await getGlobalCryptoList.execute().get().map(CryptocurrencyListPresentableItem.init)
             } catch {
                 self.showErrorAlert = true
                 handleError(error: error as? CryptocurrencyDomainError)
@@ -36,11 +36,10 @@ class GlobalCryptoListViewModel: ObservableObject {
         }
     }
     
-    private func handleError(error: CryptocurrencyDomainError?)  {
+    private func handleError(error: CryptocurrencyDomainError?) {
         showErrorMessage = errorMapper.map(domainError: error)
     }
 }
-
 
 // MARK: - Double extension to convert to String and return a two decimal place formatted String
 extension Double {

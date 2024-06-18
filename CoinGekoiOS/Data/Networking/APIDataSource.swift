@@ -59,7 +59,7 @@ class APIDataSource: IAPIDataSource {
         }
     }
     
-    func getPriceInfoForCryptos(id: [String]) async -> Result<[String : CryptoCurrencyPriceInfoDTO?], HTTPClientError> {
+    func getPriceInfoForCryptos(id: [String]) async -> Result<[String: CryptoCurrencyPriceInfoDTO?], HTTPClientError> {
         let queryParams: [String: Any] = [
             "ids": id.joined(separator: ","),
             "vs_currencies": "usd",
@@ -78,7 +78,7 @@ class APIDataSource: IAPIDataSource {
         }
         
         do {
-            let priceInfoForCryptos = try JSONDecoder().decode([String : CryptoCurrencyPriceInfoDTO].self, from: data)
+            let priceInfoForCryptos = try JSONDecoder().decode([String: CryptoCurrencyPriceInfoDTO].self, from: data)
             return .success(priceInfoForCryptos)
         } catch {
             return .failure(.parsingError(error))

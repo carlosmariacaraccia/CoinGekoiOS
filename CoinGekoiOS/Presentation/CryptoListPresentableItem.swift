@@ -24,8 +24,7 @@ struct CryptocurrencyListPresentableItem: Identifiable {
         self.symbol = domainModel.symbol
         self.price = String(domainModel.price) + " $"
         self.marketCap = String(domainModel.marketCap.twoDecimalPlacesFormatted()) + " $"
-        if let price24h = domainModel.price24h,
-           let volume24h = domainModel.volume24h {
+        if let price24h = domainModel.price24h, let volume24h = domainModel.volume24h {
             self.volume24h = String(volume24h.twoDecimalPlacesFormatted()) + " $"
             self.isPriceChangePositive = price24h > 0
             self.price24h = "\(isPriceChangePositive ? "+" : "")" + String(price24h.twoDecimalPlacesFormatted()) + " %"
