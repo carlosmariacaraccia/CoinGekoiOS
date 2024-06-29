@@ -9,7 +9,15 @@ import Foundation
 
 class GlobalCryptoListFactory {
     
-    static func createUseCase() -> IGetGlobalCryptoList {
+    static func create() -> GlobalCryptoListView {
+        GlobalCryptoListView(viewModel: createViewModel(), createCryptoDetailView: CryptoDetailFactory())
+    }
+    
+    private static func createViewModel() -> GlobalCryptoListViewModel {
+        GlobalCryptoListViewModel(getGlobalCryptoList: createUseCase(), errorMapper: CryptocurrencyPresentableErrorMapper())
+    }
+    
+    private static func createUseCase() -> IGetGlobalCryptoList {
         GetGlobalCryptoList(repo: createRemoteCryptoCurrencyRepository())
     }
     

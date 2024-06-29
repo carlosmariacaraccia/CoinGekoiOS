@@ -9,16 +9,10 @@ import SwiftUI
 
 @main
 struct CoinGekoiOSApp: App {
-    let root = GlobalCryptoListFactory.createUseCase()
     
     var body: some Scene {
         WindowGroup {
-            GlobalCryptoListView(
-                viewModel: .init(
-                    getGlobalCryptoList: root,
-                    errorMapper: CryptocurrencyPresentableErrorMapper()
-                )
-            )
+            GlobalCryptoListFactory.create()
         }
     }
 }

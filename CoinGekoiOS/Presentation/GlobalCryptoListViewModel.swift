@@ -11,9 +11,10 @@ import SwiftUI
 class GlobalCryptoListViewModel: ObservableObject {
     @Published var cryptos = [CryptocurrencyListPresentableItem]()
     @Published var showLoadingSpinner = false
-    var showErrorMessage: String?
     @Published var showErrorAlert = false
-    
+
+    var showErrorMessage: String?
+
     private let getGlobalCryptoList: IGetGlobalCryptoList
     private let errorMapper: CryptocurrencyPresentableErrorMapper
     

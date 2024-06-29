@@ -7,9 +7,13 @@
 
 import Foundation
 
-class GetPriceHistory {
+protocol IGetPriceHistory {
+    func execute(id: String, days: Int) async -> Result<CryptocurrencyPriceHistory, CryptocurrencyDomainError>
+}
+
+class GetPriceHistory: IGetPriceHistory {
     
-    let cryptocurrencyPriceHistoryRepository: IRemoteCryptocurrencyPriceHistoryRepository
+    private let cryptocurrencyPriceHistoryRepository: IRemoteCryptocurrencyPriceHistoryRepository
     
     init(cryptocurrencyPriceHistoryRepository: IRemoteCryptocurrencyPriceHistoryRepository) {
         self.cryptocurrencyPriceHistoryRepository = cryptocurrencyPriceHistoryRepository

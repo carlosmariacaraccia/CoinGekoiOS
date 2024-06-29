@@ -32,7 +32,7 @@ class APIPriceHistoryDataSource: IAPIPriceHistoryDataSource {
             queryParameters: queryParams
         )
         
-        let result = await httpClient.makeRequest(endpoint: endpoint, baseUrl: "http://api.coingeko.com/api/v3/")
+        let result = await httpClient.makeRequest(endpoint: endpoint, baseUrl: "http://api.coingecko.com/api/v3/")
         guard case .success(let data) = result else {
             return .failure(handleError(error: result.failureError as? HTTPClientError) )
         }

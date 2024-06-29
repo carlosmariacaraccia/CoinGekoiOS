@@ -7,8 +7,18 @@
 
 import SwiftUI
 
+protocol ICreateCryptoDetailView {
+    func create() -> CryptoDetailView
+}
+
 struct GlobalCryptoListView: View {
-    @StateObject var viewModel: GlobalCryptoListViewModel
+    @ObservedObject private var viewModel: GlobalCryptoListViewModel
+    private let createCryptoDetailView: ICreateCryptoDetailView
+    
+    init(viewModel: GlobalCryptoListViewModel, createCryptoDetailView: ICreateCryptoDetailView) {
+        self.viewModel = viewModel
+        self.createCryptoDetailView = createCryptoDetailView
+    }
 
     var body: some View {
         VStack {
@@ -16,9 +26,15 @@ struct GlobalCryptoListView: View {
                 ProgressView()
                     .progressViewStyle(.circular)
             } else {
-                List {
-                    ForEach(viewModel.cryptos) { crypto in
-                        CryptoListItemView(item: crypto)
+                NavigationStack {
+                    List {
+                        ForEach(viewModel.cryptos) { crypto in
+                            NavigationLink {
+                                createCryptoDetailView.create()
+                            } label: {
+                                CryptoListItemView(item: crypto)
+                            }
+                        }
                     }
                 }
             }
