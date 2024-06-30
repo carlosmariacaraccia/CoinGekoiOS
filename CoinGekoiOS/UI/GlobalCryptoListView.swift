@@ -8,7 +8,7 @@
 import SwiftUI
 
 protocol ICreateCryptoDetailView {
-    func create() -> CryptoDetailView
+    func create(cryptocurrency: CryptocurrencyListPresentableItem) -> CryptoDetailView
 }
 
 struct GlobalCryptoListView: View {
@@ -30,7 +30,7 @@ struct GlobalCryptoListView: View {
                     List {
                         ForEach(viewModel.cryptos) { crypto in
                             NavigationLink {
-                                createCryptoDetailView.create()
+                                createCryptoDetailView.create(cryptocurrency: crypto)
                             } label: {
                                 CryptoListItemView(item: crypto)
                             }

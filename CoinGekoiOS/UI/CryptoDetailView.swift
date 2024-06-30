@@ -20,7 +20,7 @@ struct CryptoDetailView: View {
     var body: some View {
         ZStack {
             VStack {
-                CryptoDetailHeaderView()
+                CryptoDetailHeaderView(cryptocurrency: viewModel.cryptocurrency)
                 Spacer()
                 Chart(viewModel.dataPoints) { dataPoint in
                     LineMark(
@@ -44,14 +44,15 @@ struct CryptoDetailView: View {
 
 class CryptoDetailFactory: ICreateCryptoDetailView {
     
-    func create() -> CryptoDetailView {
-        CryptoDetailView(viewModel: self.createViewModel())
+    func create(cryptocurrency: CryptocurrencyListPresentableItem) -> CryptoDetailView {
+        CryptoDetailView(viewModel: self.createViewModel(cryptocurrency: cryptocurrency))
     }
     
-    private func createViewModel() -> CryptoDetailViewModel {
+    private func createViewModel(cryptocurrency: CryptocurrencyListPresentableItem) -> CryptoDetailViewModel {
         CryptoDetailViewModel(
             getPriceHistory: createUseCase(),
-            errorMapper: CryptocurrencyPresentableErrorMapper()
+            errorMapper: CryptocurrencyPresentableErrorMapper(),
+            cryptocurrency: cryptocurrency
         )
     }
     

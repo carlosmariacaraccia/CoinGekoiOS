@@ -9,19 +9,26 @@ import SwiftUI
 import Charts
 
 struct CryptoDetailHeaderView: View {
+   
+    private let cryptocurrency: CryptocurrencyListPresentableItem
+    
+    init(cryptocurrency: CryptocurrencyListPresentableItem) {
+        self.cryptocurrency = cryptocurrency
+    }
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("Bitcoin")
+                Text(cryptocurrency.name)
                     .font(.title)
-                Text("BTC")
+                Text(cryptocurrency.symbol)
                     .font(.title)
             }
             Spacer()
             VStack(alignment: .trailing) {
-                Text("23.9345")
+                Text(cryptocurrency.price)
                     .font(.title)
-                Text("1.45%")
+                Text(cryptocurrency.price24h)
                     .font(.headline)
             }
         }
@@ -30,7 +37,7 @@ struct CryptoDetailHeaderView: View {
             Text("Cap de mercado:")
                 .font(.headline)
             Spacer()
-            Text("121212121212")
+            Text(cryptocurrency.marketCap)
                 .font(.headline)
         }
         .padding(.horizontal)
@@ -38,7 +45,7 @@ struct CryptoDetailHeaderView: View {
             Text("Volumen en 24h: ")
                 .font(.headline)
             Spacer()
-            Text("12123123")
+            Text(cryptocurrency.volume24h)
                 .font(.headline)
         }
         .padding(.horizontal)
@@ -46,5 +53,5 @@ struct CryptoDetailHeaderView: View {
 }
 
 #Preview {
-    CryptoDetailHeaderView()
+    CryptoDetailHeaderView(cryptocurrency: .init(domainModel: .mockedData))
 }

@@ -165,8 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				1FB30B8D2C3015F000D3A11D /* Info.plist */,
-				1F4CDD562C20565000131042 /* UI */,
 				1F4CDD532C20531500131042 /* CompositionRoot */,
+				1F4CDD562C20565000131042 /* UI */,
 				1FBF2A982C108DD800A90B11 /* Presentation */,
 				1FBF2A932C10870C00A90B11 /* Infrastructure */,
 				1FBD1BE32C0FB7000047FF8C /* Utilities */,
