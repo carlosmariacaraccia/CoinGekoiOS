@@ -8,14 +8,9 @@
 import SwiftUI
 import Charts
 
-struct ChartDataPoint: Identifiable {
-    let id = UUID()
-    let date: Date
-    let price: Double
-}
-
 struct CryptoDetailView: View {
     @StateObject var viewModel: CryptoDetailViewModel
+    @State private var selectedOption: DaysOption = .month
     
     var body: some View {
         ZStack {
@@ -28,10 +23,26 @@ struct CryptoDetailView: View {
                         y: .value("Price", dataPoint.price)
                     )
                 }
+                Picker("", selection: $selectedOption) {
+                    ForEach(DaysOption.allCases, id: \.self) {
+                        Text($0.rawValue)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .onChange(of: selectedOption) { _, daysOptionNewValue in
+                    viewModel.getPriceHistory(daysOption: daysOptionNewValue)
+                }
             }
             if viewModel.showLoadingSpinner {
                 ProgressView()
                     .progressViewStyle(.circular)
+            } else if let errorMessage = viewModel.showErrorMessage {
+                VStack {
+                    Text(errorMessage)
+                    Button("Retry") {
+                        viewModel.getPriceHistory(daysOption: selectedOption)
+                    }
+                }
             }
         }
         .onAppear(perform: viewModel.onAppear)

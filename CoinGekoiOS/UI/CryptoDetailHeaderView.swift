@@ -26,8 +26,9 @@ struct CryptoDetailHeaderView: View {
             }
             Spacer()
             VStack(alignment: .trailing) {
-                Text(cryptocurrency.price)
+                Text(cryptocurrency.isPriceChangePositive ? "+" : "" + cryptocurrency.price)
                     .font(.title)
+                    .foregroundStyle(cryptocurrency.isPriceChangePositive ? .green : .red)
                 Text(cryptocurrency.price24h)
                     .font(.headline)
             }
